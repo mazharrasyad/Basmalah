@@ -83,4 +83,8 @@ Catatan :
 - Jika dilinux dan mengalami error maka : 
 <br>$ sudo php artisan key:generate
   
-## Selesai
+## Development
+
+- Design
+- User Friendly
+- Validation
