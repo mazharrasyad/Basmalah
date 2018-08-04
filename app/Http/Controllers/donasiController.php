@@ -38,7 +38,6 @@ class donasiController extends AppBaseController
         $this->donasiRepository->pushCriteria(new RequestCriteria($request));
         $donasis = $this->donasiRepository->all();
 
-
         return view('donasis.index')
             ->with('donasis', $donasis);
     }
@@ -55,7 +54,7 @@ class donasiController extends AppBaseController
       else
         $donasi = donasi::max('id');
 
-      $dkm = dkm::pluck('email','id');
+      $dkm = dkm::where('status', 'Disetujui')->pluck('email','id');
       return view('donasis.create', compact('donasi','dkm'));
     }
 

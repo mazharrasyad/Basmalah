@@ -53,7 +53,7 @@ class penggunaController extends AppBaseController
     {
         if(Auth::guest())
           abort(404);
-        
+
         $role = role::pluck('name','id');
         return view('penggunas.create',compact('role'));
     }

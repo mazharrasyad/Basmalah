@@ -66,8 +66,8 @@ class donasi extends Model
      * @var array
      */
     public static $rules = [
-        'no_handphone' => 'numeric|unique:pengajars',
-        'email' => 'email|unique:pengajars',
+        //'no_handphone' => 'numeric|unique:pengajars',
+        //'email' => 'email|unique:pengajars',
         'dkm_id' => 'required',
         'nominal' => 'numeric|min:10000',
         'pesan' => 'required',

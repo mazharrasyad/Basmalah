@@ -120,7 +120,7 @@ class dkmController extends AppBaseController
         }
 
         $user = user::pluck('email','id');
-
+        
         return view('dkms.edit', compact('user'))->with('dkm', $dkm);
     }
 
