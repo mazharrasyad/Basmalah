@@ -69,7 +69,7 @@
           Status :
             @if($belajar->status == "Pending")
               <font color="green">
-            @elseif($belajar->status == "Belajar")
+            @elseif($belajar->status == "Aktif")
               <font color="blue">
             @else
               <font color="red">

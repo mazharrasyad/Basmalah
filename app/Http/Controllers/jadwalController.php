@@ -57,8 +57,8 @@ class jadwalController extends AppBaseController
         else
           $jadwal = jadwal::max('id');
 
-        $belajar = belajar::pluck('kode','id');
-        $pengangguran = pengangguran::where('user_id',Auth::user()->id)->pluck('kode','id');
+        $pengangguran = pengangguran::where('user_id', Auth::user()->id)->where(function ($status) { $status->where('Status', 'Menganggur')->orWhere('Status', 'Belajar');})->pluck('kode','id');
+        $belajar = belajar::where('Status', 'Pending')->orWhere('Status', 'Aktif')->pluck('kode','id');
 
         return view('jadwals.create', compact('pengangguran','belajar','jadwal'));
     }

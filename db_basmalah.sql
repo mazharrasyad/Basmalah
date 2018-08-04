@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 23, 2018 at 11:39 AM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 04 Agu 2018 pada 12.44
+-- Versi server: 10.1.34-MariaDB
+-- Versi PHP: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `belajars`
+-- Struktur dari tabel `belajars`
 --
 
 CREATE TABLE `belajars` (
@@ -43,10 +43,24 @@ CREATE TABLE `belajars` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `belajars`
+--
+
+INSERT INTO `belajars` (`id`, `kode`, `user_id`, `pelajaran`, `alamat_tempat_belajar`, `hari`, `pukul`, `status`, `url`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'BL1', 4, 'Memasak Makanan Padang', 'Jl. Padang Deket Depok', 'Senin', '07.00 - 09.00', 'Aktif', 'c4ca4238a0b923820dcc509a6f75849b', '2018-08-04 02:07:47', '2018-08-04 02:47:52', NULL),
+(2, 'BL2', 4, 'Memasak Makanan Khas Jawa', 'Jl. Padang Deket Depok', 'Selasa', '07.00 - 09.00', 'Selesai', 'c81e728d9d4c2f636f067f89cc14862c', '2018-08-04 02:08:23', '2018-08-04 02:48:48', NULL),
+(3, 'BL3', 4, 'Memasak Makanan Tradisional', 'Jl. Padang Deket Depok', 'Rabu', '12.30 - 14.30', 'Pending', 'eccbc87e4b5ce2fe28308fd9f2a7baf3', '2018-08-04 02:48:38', '2018-08-04 02:48:38', NULL),
+(4, 'BL4', 5, 'Menjahit Baju', 'Jl. Merdeka No 1', 'Ahad', '09.00 - 11.00', 'Pending', 'a87ff679a2f3e71d9181a67b7542122c', '2018-08-04 02:52:59', '2018-08-04 02:52:59', NULL),
+(5, 'BL5', 5, 'Menjahit Celana', 'Jl. Merdeka No 1', 'Sabtu', '12.30 - 14.30', 'Aktif', 'e4da3b7fbbce2345d7772b0674a318d5', '2018-08-04 02:53:17', '2018-08-04 02:54:20', NULL),
+(6, 'BL6', 5, 'Menjahit Syal', 'Jl. Merdeka No 1', 'Senin', '15.30 - 17.30', 'Selesai', '1679091c5a880faf6fb5e6087eb1b2dc', '2018-08-04 02:53:45', '2018-08-04 02:54:24', NULL),
+(7, 'BL7', 4, 'Memasak Makanan Laut', 'Jl. Padang Deket Depok', 'Jumat', '09.00 - 11.00', 'Pending', '8f14e45fceea167a5a36dedd4bea2543', '2018-08-04 03:05:24', '2018-08-04 03:05:24', NULL),
+(8, 'BL8', 5, 'Menjahit Jas', 'Jl. Merdeka No 1', 'Kamis', '07.00 - 09.00', 'Pending', 'c9f0f895fb98ab9159f51fd0297e236d', '2018-08-04 03:07:26', '2018-08-04 03:07:26', NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dkms`
+-- Struktur dari tabel `dkms`
 --
 
 CREATE TABLE `dkms` (
@@ -67,10 +81,20 @@ CREATE TABLE `dkms` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `dkms`
+--
+
+INSERT INTO `dkms` (`id`, `nama_lengkap`, `alamat`, `no_handphone`, `email`, `nama_masjid`, `alamat_masjid`, `jabatan_di_masjid`, `no_rekening_masjid`, `status`, `user_id`, `url`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Muhammad Azhar Rasyad', 'Perumahan Persada Alam Blok B1 No 18', '081290351971', 'muhazharrasyad@gmail.com', 'Masjid Al Muhajirin', 'Jl. Persada Alam Cibinong', 'Ketua Dewan Kemakmuran Masjid', '1330014415715', 'Disetujui', 2, 'c4ca4238a0b923820dcc509a6f75849b', '2018-08-03 23:52:11', '2018-08-04 02:25:17', NULL),
+(2, 'Muhammad Hasbi Sidiq', 'Perumahan Depok Alam Lestari Blok A2 No 19', '081290351221', 'mhasbisidiq@gmail.com', 'Masjid Al Ikhlas', 'Jl. Depok Alam Lestari', 'Bendahara', '1330014415225', 'Disetujui', 3, 'c81e728d9d4c2f636f067f89cc14862c', '2018-08-03 23:53:53', '2018-08-04 02:25:49', NULL),
+(3, 'Naufal Afif Fadhlullah', 'Perumahan Jamaika Blok Z No 99', '081290359999', 'nafif@gmail.com', 'Masjid An Nur', 'Jl. Jamaika No 1', 'Humas', '1330014419999', 'Ditolak', 1, 'eccbc87e4b5ce2fe28308fd9f2a7baf3', '2018-08-03 23:55:04', '2018-08-04 00:06:20', NULL),
+(4, 'Muhammad Febrian Mosii', 'Jl. Karadenan BDB II', '081290111200', 'febrian@yahoo.co.id', 'Masjid Al Ikhwan', 'Jl.Srengseng Sawah No 21', 'Muadzin', '1330014415200', 'Pending', 0, 'a87ff679a2f3e71d9181a67b7542122c', '2018-08-04 00:24:23', '2018-08-04 00:24:23', NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donasis`
+-- Struktur dari tabel `donasis`
 --
 
 CREATE TABLE `donasis` (
@@ -88,10 +112,19 @@ CREATE TABLE `donasis` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `donasis`
+--
+
+INSERT INTO `donasis` (`id`, `no_handphone`, `email`, `dkm_id`, `nominal`, `pesan`, `transfer_bank`, `status`, `url`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(2, '081290131200', 'eatna2002@gmail.com', 1, '100000', 'Semangat', 'Mandiri', 'Gagal', 'c4ca4238a0b923820dcc509a6f75849b', '2018-08-04 00:36:28', '2018-08-04 00:53:46', NULL),
+(3, '081290111221', 'eatna2002@gmail.com', 2, '200000', 'Lanjutkan', 'BCA', 'Selesai', 'eccbc87e4b5ce2fe28308fd9f2a7baf3', '2018-08-04 00:51:05', '2018-08-04 00:53:42', NULL),
+(4, '081290131200', 'eatna2002@gmail.com', 2, '100000', 'Semangat Terus', 'Mandiri', 'Pending', 'a87ff679a2f3e71d9181a67b7542122c', '2018-08-04 00:51:26', '2018-08-04 00:51:26', NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jadwals`
+-- Struktur dari tabel `jadwals`
 --
 
 CREATE TABLE `jadwals` (
@@ -107,10 +140,23 @@ CREATE TABLE `jadwals` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `jadwals`
+--
+
+INSERT INTO `jadwals` (`id`, `pengangguran_id`, `belajar_id`, `jadwal`, `user_id`, `status`, `url`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 1, '11', 2, 'Diterima', 'c4ca4238a0b923820dcc509a6f75849b', '2018-08-04 03:12:30', '2018-08-04 03:35:52', NULL),
+(2, 1, 3, '13', 2, 'Ditolak', 'c81e728d9d4c2f636f067f89cc14862c', '2018-08-04 03:21:49', '2018-08-04 03:36:14', NULL),
+(3, 2, 8, '28', 2, 'Diterima', 'eccbc87e4b5ce2fe28308fd9f2a7baf3', '2018-08-04 03:22:15', '2018-08-04 03:37:23', NULL),
+(4, 5, 1, '51', 3, 'Diterima', 'a87ff679a2f3e71d9181a67b7542122c', '2018-08-04 03:31:47', '2018-08-04 03:36:04', NULL),
+(5, 5, 5, '55', 3, 'Menunggu', 'e4da3b7fbbce2345d7772b0674a318d5', '2018-08-04 03:31:56', '2018-08-04 03:31:56', NULL),
+(6, 9, 5, '91', 3, 'Ditolak', '1679091c5a880faf6fb5e6087eb1b2dc', '2018-08-04 03:32:03', '2018-08-04 03:37:39', NULL),
+(7, 9, 7, '97', 3, 'Menunggu', '8f14e45fceea167a5a36dedd4bea2543', '2018-08-04 03:32:47', '2018-08-04 03:32:47', NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laporans`
+-- Struktur dari tabel `laporans`
 --
 
 CREATE TABLE `laporans` (
@@ -124,10 +170,19 @@ CREATE TABLE `laporans` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `laporans`
+--
+
+INSERT INTO `laporans` (`id`, `no_handphone`, `pesan`, `status`, `url`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, '081290131200', 'Kurang Desain', 'Selesai', 'c4ca4238a0b923820dcc509a6f75849b', '2018-08-04 00:43:44', '2018-08-04 00:53:52', NULL),
+(2, '081290111221', 'Tampilannya Kurang Menarik', 'Pending', 'c81e728d9d4c2f636f067f89cc14862c', '2018-08-04 00:51:44', '2018-08-04 00:51:44', NULL),
+(3, '081290111221', 'Terlalu Simple', 'Pending', 'eccbc87e4b5ce2fe28308fd9f2a7baf3', '2018-08-04 00:51:58', '2018-08-04 00:51:58', NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -137,7 +192,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -159,7 +214,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Struktur dari tabel `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -171,7 +226,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengajars`
+-- Struktur dari tabel `pengajars`
 --
 
 CREATE TABLE `pengajars` (
@@ -191,10 +246,20 @@ CREATE TABLE `pengajars` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `pengajars`
+--
+
+INSERT INTO `pengajars` (`id`, `nama_lengkap`, `agama`, `jenis_kelamin`, `alamat`, `no_handphone`, `email`, `bidang_keahlian`, `status`, `user_id`, `url`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Budi', 'Islam', 'Pria', 'Perumahan Kemang Swatama Blok B3 No 12', '081290111221', 'budi@yahoo.co.id', 'Memasak', 'Disetujui', 4, 'c4ca4238a0b923820dcc509a6f75849b', '2018-08-03 23:58:32', '2018-08-04 02:11:13', NULL),
+(2, 'Asep', 'Islam', 'Pria', 'Jl. Persahabatan No 18', '081290991221', 'asep@yahoo.com', 'Menjahit', 'Disetujui', 5, 'c81e728d9d4c2f636f067f89cc14862c', '2018-08-03 23:59:26', '2018-08-04 02:11:25', NULL),
+(3, 'Rudi', 'Islam', 'Pria', 'Jl. Raden Saleh No 19 RT 01 RW 10', '081290322221', 'rudi@gmail.com', 'Bertani', 'Ditolak', 0, 'eccbc87e4b5ce2fe28308fd9f2a7baf3', '2018-08-04 00:00:17', '2018-08-04 00:33:35', NULL),
+(4, 'Hajid', 'Islam', 'Pria', 'Jl. Cileunsi No 100', '081290115221', 'zharjid@gmail.com', 'Berternak', 'Pending', 0, 'a87ff679a2f3e71d9181a67b7542122c', '2018-08-04 00:25:30', '2018-08-04 00:25:30', NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penganggurans`
+-- Struktur dari tabel `penganggurans`
 --
 
 CREATE TABLE `penganggurans` (
@@ -216,10 +281,25 @@ CREATE TABLE `penganggurans` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `penganggurans`
+--
+
+INSERT INTO `penganggurans` (`id`, `kode`, `nama_lengkap`, `agama`, `jenis_kelamin`, `alamat`, `pendidikan_terakhir`, `peminatan`, `lama_menganggur`, `jumlah_orang_tanggungan`, `status`, `user_id`, `url`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'PG1', 'Renaldi', 'Islam', 'Pria', 'Jl. Sukmajaya No 18', 'Tidak Sekolah', 'Mengajar', 'Kurang Dari 1 Bulan', '2', 'Belajar', 2, 'c4ca4238a0b923820dcc509a6f75849b', '2018-08-04 00:56:16', '2018-08-04 03:21:13', NULL),
+(2, 'PG2', 'Lukman', 'Islam', 'Pria', 'Jl. Cikumpa No 20', 'Taman Kanak-Kanak atau Setingkat', 'Memasak', 'Antara 1 - 12 Bulan', '4', 'Belajar', 2, 'c81e728d9d4c2f636f067f89cc14862c', '2018-08-04 00:57:02', '2018-08-04 03:22:25', NULL),
+(3, 'PG3', 'Aji', 'Islam', 'Pria', 'Jl. Cikumpa No 1', 'Sekolah Dasar atau Setingkat', 'Berdagang', 'Lebih Dari 12 Bulan', '3', 'Menganggur', 2, 'eccbc87e4b5ce2fe28308fd9f2a7baf3', '2018-08-04 02:44:16', '2018-08-04 02:44:16', NULL),
+(4, 'PG4', 'Gumilar', 'Islam', 'Pria', 'Jl. Pangraji No 2', 'Sekolah Menengah Atas atau Setingkat', 'Berdakwah', 'Lebih Dari 12 Bulan', '4', 'Bekerja', 2, 'a87ff679a2f3e71d9181a67b7542122c', '2018-08-04 02:44:49', '2018-08-04 02:45:09', NULL),
+(5, 'PG5', 'Angga', 'Islam', 'Pria', 'Jl. Cilebut No 1', 'Sekolah Menengah Pertama atau Setingkat', 'Menjahit', 'Kurang Dari 1 Bulan', '3', 'Belajar', 3, 'e4da3b7fbbce2345d7772b0674a318d5', '2018-08-04 02:50:45', '2018-08-04 03:32:17', NULL),
+(6, 'PG6', 'Abdul', 'Islam', 'Pria', 'Jl. Cilebut No 2', 'Tidak Sekolah', 'Memasak', 'Antara 1 - 12 Bulan', '0', 'Bekerja', 3, '1679091c5a880faf6fb5e6087eb1b2dc', '2018-08-04 02:51:14', '2018-08-04 03:32:23', NULL),
+(7, 'PG7', 'Lazuardi', 'Islam', 'Pria', 'Jl. Cilebut No 1', 'Taman Kanak-Kanak atau Setingkat', 'Bertani', 'Antara 1 - 12 Bulan', '1', 'Menganggur', 3, '8f14e45fceea167a5a36dedd4bea2543', '2018-08-04 02:51:50', '2018-08-04 02:51:50', NULL),
+(8, 'PG8', 'Ihsan', 'Islam', 'Pria', 'Jl. Cilebut No 10', 'Sekolah Menengah Atas atau Setingkat', 'Olahraga', 'Lebih Dari 12 Bulan', '2', 'Menganggur', 2, 'c9f0f895fb98ab9159f51fd0297e236d', '2018-08-04 03:24:18', '2018-08-04 03:24:18', NULL),
+(9, 'PG9', 'Iqbal', 'Islam', 'Pria', 'Jl. Cilebut No 55', 'Taman Kanak-Kanak atau Setingkat', 'Olahraga', 'Kurang Dari 1 Bulan', '3', 'Belajar', 3, '45c48cce2e2d7fbdea1afc51c7c6ad26', '2018-08-04 03:24:58', '2018-08-04 03:32:27', NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Struktur dari tabel `roles`
 --
 
 CREATE TABLE `roles` (
@@ -230,7 +310,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Dumping data untuk tabel `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -241,7 +321,7 @@ INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -258,18 +338,22 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `password`, `hint_password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', '$2y$10$7boWMglqF3YHIQq5ePnf5eJ0J.VQVvddoE.mM1KHyI.cRCGvwfJZS', '123456', '9DZBynkPGZKslsf6KUN33Fj1REdJbew0GabHhznEavPlIlWtRcqgJMPsI88I', '2018-07-23 02:37:57', '2018-07-23 02:37:57', NULL);
+(1, 1, 'Admin', 'admin@admin.com', '$2y$10$7boWMglqF3YHIQq5ePnf5eJ0J.VQVvddoE.mM1KHyI.cRCGvwfJZS', '123456', 'z4MXeAImmP0l6dsARsIeGLJsvo9yPzUjBiIjS00mtv9qvjl0vzX3oGAVRr6Z', '2018-07-23 02:37:57', '2018-08-04 00:18:32', NULL),
+(2, 2, 'Muhammad Azhar Rasyad', 'muhazharrasyad@gmail.com', '$2y$10$8jrP40QPf.t4W9XGvjRgC.Tm2J0avia4csHApeSik1AT6jQ5PZcIi', 'rahasia', '8LfrW5405sjoekLingHRcxEZmqiCDXUkJvFzFWetqtTmmvYHpWUyfQCezxrF', '2018-08-04 00:07:23', '2018-08-04 00:07:23', NULL),
+(3, 2, 'Muhammad Hasbi Sidiq', 'mhasbisidiq@gmail.com', '$2y$10$TL0ocMp34vZD25xxv8zeOOVquHdpFvqb6Ez0nnKow5RIp1A7lf07y', 'gaktau', 'GBPfjG6XobBCqGEbnb6DGARj99jVC73RXcN1KBiMbntPnbksLKjvriPuUxBZ', '2018-08-04 00:07:45', '2018-08-04 00:07:54', NULL),
+(4, 3, 'Budi', 'budi@yahoo.co.id', '$2y$10$IrNtiZ2z9zQQTfG.1orNDudDdETY6MbEDY0XdkVEgu4rs47zsl3fi', '123456', 'HQqVnqmAvNb05yvf6CRuAObnoFrg6XPvYas8l0jwF4zUpsXRMY7og73zwu9V', '2018-08-04 00:30:02', '2018-08-04 00:32:05', NULL),
+(5, 3, 'Asep', 'asep@yahoo.com', '$2y$10$IHpJotyh8lY0MuMSMDA8p.XKSWnR21CmHqg7LL1/IZrS5d3VvWs4.', '654321', 'JxZ21w3igHAdB2gOFNDyZyEOoxvd6bN5j09S66WgpbGyNImQldZQdRY9xeuF', '2018-08-04 00:32:53', '2018-08-04 00:32:53', NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `belajars`
+-- Indeks untuk tabel `belajars`
 --
 ALTER TABLE `belajars`
   ADD PRIMARY KEY (`id`),
@@ -277,7 +361,7 @@ ALTER TABLE `belajars`
   ADD KEY `belajars_user_id_foreign` (`user_id`);
 
 --
--- Indexes for table `dkms`
+-- Indeks untuk tabel `dkms`
 --
 ALTER TABLE `dkms`
   ADD PRIMARY KEY (`id`),
@@ -285,14 +369,14 @@ ALTER TABLE `dkms`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `donasis`
+-- Indeks untuk tabel `donasis`
 --
 ALTER TABLE `donasis`
   ADD PRIMARY KEY (`id`),
   ADD KEY `donasis_dkm_id_foreign` (`dkm_id`) USING BTREE;
 
 --
--- Indexes for table `jadwals`
+-- Indeks untuk tabel `jadwals`
 --
 ALTER TABLE `jadwals`
   ADD PRIMARY KEY (`id`),
@@ -301,25 +385,25 @@ ALTER TABLE `jadwals`
   ADD KEY `jadwals_belajar_id_foreign` (`belajar_id`);
 
 --
--- Indexes for table `laporans`
+-- Indeks untuk tabel `laporans`
 --
 ALTER TABLE `laporans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `pengajars`
+-- Indeks untuk tabel `pengajars`
 --
 ALTER TABLE `pengajars`
   ADD PRIMARY KEY (`id`),
@@ -327,7 +411,7 @@ ALTER TABLE `pengajars`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `penganggurans`
+-- Indeks untuk tabel `penganggurans`
 --
 ALTER TABLE `penganggurans`
   ADD PRIMARY KEY (`id`),
@@ -335,107 +419,107 @@ ALTER TABLE `penganggurans`
   ADD KEY `penganggurans_user_id_foreign` (`user_id`);
 
 --
--- Indexes for table `roles`
+-- Indeks untuk tabel `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `belajars`
+-- AUTO_INCREMENT untuk tabel `belajars`
 --
 ALTER TABLE `belajars`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `dkms`
+-- AUTO_INCREMENT untuk tabel `dkms`
 --
 ALTER TABLE `dkms`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `donasis`
+-- AUTO_INCREMENT untuk tabel `donasis`
 --
 ALTER TABLE `donasis`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `jadwals`
+-- AUTO_INCREMENT untuk tabel `jadwals`
 --
 ALTER TABLE `jadwals`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `laporans`
+-- AUTO_INCREMENT untuk tabel `laporans`
 --
 ALTER TABLE `laporans`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `pengajars`
+-- AUTO_INCREMENT untuk tabel `pengajars`
 --
 ALTER TABLE `pengajars`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `penganggurans`
+-- AUTO_INCREMENT untuk tabel `penganggurans`
 --
 ALTER TABLE `penganggurans`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT untuk tabel `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `belajars`
+-- Ketidakleluasaan untuk tabel `belajars`
 --
 ALTER TABLE `belajars`
   ADD CONSTRAINT `belajars_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `donasis`
+-- Ketidakleluasaan untuk tabel `donasis`
 --
 ALTER TABLE `donasis`
   ADD CONSTRAINT `donasis_dkm_id_foreign	` FOREIGN KEY (`dkm_id`) REFERENCES `dkms` (`id`);
 
 --
--- Constraints for table `jadwals`
+-- Ketidakleluasaan untuk tabel `jadwals`
 --
 ALTER TABLE `jadwals`
   ADD CONSTRAINT `jadwals_belajar_id_foreign` FOREIGN KEY (`belajar_id`) REFERENCES `belajars` (`id`),
   ADD CONSTRAINT `jadwals_pengangguran_id_foreign` FOREIGN KEY (`pengangguran_id`) REFERENCES `penganggurans` (`id`);
 
 --
--- Constraints for table `penganggurans`
+-- Ketidakleluasaan untuk tabel `penganggurans`
 --
 ALTER TABLE `penganggurans`
   ADD CONSTRAINT `penganggurans_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
